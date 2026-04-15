@@ -1,0 +1,284 @@
+/* AdminDashboard.css - Taita Taveta University Green Theme */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg-color: #f0f4f2;          /* Light green-tinted page background */
+  --sidebar-bg: #1a7a4a;        /* TTU Dark Green */
+  --sidebar-hover: #15613b;     /* Darker green for hover/active */
+  --accent-green: #27ae60;      /* Mid green — buttons, badges, highlights */
+  --accent-light: #e8f5ee;      /* Very light green — card tints, hover fills */
+  --accent-gold: #f39c12;       /* Gold — brand name, special highlights */
+  --card-white: #ffffff;
+  --text-dark: #2c3e50;
+  --success-green: #27ae60;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+}
+
+/* --- LAYOUT --- */
+.admin-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+  width: 260px;
+  background-color: var(--sidebar-bg);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  transition: all 0.3s;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent-gold);     /* Gold brand name on green sidebar */
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  color: #a8d5b5;                /* Muted light green for inactive items */
+  text-decoration: none;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  border-left: 4px solid var(--accent-gold);  /* Gold left bar on active */
+}
+
+/* --- MAIN CONTENT --- */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background-color: var(--bg-color);
+}
+
+/* --- TOP HEADER --- */
+.top-header {
+  background-color: var(--card-white);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border-bottom: 3px solid var(--accent-light);
+}
+
+.search-box {
+  background: var(--accent-light);
+  padding: 10px 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  width: 350px;
+}
+.search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  margin-left: 10px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.header-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #dfe6e9;
+  border: 2px solid var(--accent-green);   /* Green ring on avatar */
+}
+
+/* --- CONTENT AREA --- */
+.dashboard-content {
+  padding: 30px 40px;
+}
+
+.welcome-banner {
+  margin-bottom: 30px;
+}
+.welcome-banner h2 { font-weight: 600; color: var(--text-dark); margin: 0; }
+.welcome-banner p  { color: #7f8c8d; margin-top: 5px; }
+
+/* --- STATS GRID --- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: var(--card-white);
+  padding: 25px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  transition: transform 0.2s;
+  border-top: 4px solid var(--accent-green);  /* Green top accent on each card */
+}
+.card:hover { transform: translateY(-5px); }
+
+.icon-box {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+/* All icon variants now use green ramp */
+.purple { background: var(--accent-light); color: var(--sidebar-bg); }
+.orange { background: #e8f5ee;             color: var(--accent-green); }
+.green  { background: #d0ede0;             color: var(--sidebar-bg); }
+
+.card-info h3 { font-size: 28px; margin: 0; color: var(--text-dark); font-weight: 700; }
+.card-info p  { margin: 0; color: #a4b0be; font-size: 14px; }
+
+/* --- TABLE SECTION --- */
+.table-section {
+  background: var(--card-white);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.table-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--accent-light);  /* Green underline on section titles */
+}
+
+.custom-table { width: 100%; border-collapse: collapse; }
+.custom-table th {
+  text-align: left;
+  padding: 15px;
+  color: #a4b0be;
+  font-weight: 500;
+  border-bottom: 1px solid #f1f2f6;
+}
+.custom-table td {
+  padding: 15px;
+  border-bottom: 1px solid #f1f2f6;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+.custom-table tbody tr:hover {
+  background-color: var(--accent-light);   /* Subtle green row hover */
+}
+
+/* --- BADGES --- */
+.badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.badge-admin      { background: #d0ede0; color: var(--sidebar-bg); }
+.badge-department { background: #e0f7f4; color: #00695c; }
+.badge-student    { background: var(--accent-light); color: var(--accent-green); }
+
+/* --- ADD USER FORM --- */
+.add-btn {
+  background-color: var(--accent-green);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.add-btn:hover { background-color: var(--sidebar-bg); }
+
+.form-group { margin-bottom: 20px; }
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+.form-input:focus {
+  border-color: var(--accent-green);
+  box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.15);
+}
+
+/* --- TABLE HEADER ROW UTILITY --- */
+.table-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- PRINT STYLES --- */
+.printable-report { display: none; }
+
+@media print {
+  .admin-container { display: none !important; }
+
+  .printable-report {
+    display: block !important;
+    padding: 40px;
+    font-family: 'Times New Roman', serif;
+    background: white;
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  body { background-color: white; }
+}

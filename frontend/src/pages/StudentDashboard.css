@@ -1,0 +1,206 @@
+/* StudentDashboard.css - Taita Taveta University Green Theme */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-color: #f0f4f2;
+  --sidebar-bg: #1a7a4a;        /* TTU Dark Green */
+  --sidebar-hover: #15613b;
+  --accent-green: #27ae60;
+  --accent-light: #e8f5ee;
+  --accent-gold: #f39c12;
+  --card-white: #ffffff;
+  --text-dark: #2c3e50;
+  --success-green: #27ae60;
+  --danger-red: #d63031;
+  --pending-amber: #e67e22;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+}
+
+.student-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* --- SIDEBAR --- */
+.student-sidebar {
+  width: 260px;
+  background-color: var(--sidebar-bg);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.student-brand {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  color: #a8d5b5;
+  text-decoration: none;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  border-left: 4px solid var(--accent-gold);
+}
+
+/* --- MAIN CONTENT --- */
+.student-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background-color: var(--bg-color);
+}
+
+.student-header {
+  background-color: var(--card-white);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border-bottom: 3px solid var(--accent-light);
+}
+
+.student-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.student-content {
+  padding: 30px 40px;
+}
+
+/* --- WELCOME & START BUTTON --- */
+.welcome-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.start-btn {
+  background-color: var(--accent-green);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+  transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+.start-btn:hover {
+  background-color: var(--sidebar-bg);
+  transform: translateY(-2px);
+}
+.start-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* --- STATS GRID --- */
+.progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.progress-card {
+  background: var(--card-white);
+  padding: 25px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  border-top: 4px solid var(--accent-green);
+}
+
+.icon-holder {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+/* Green variants */
+.bg-purple { background: var(--accent-light); color: var(--sidebar-bg); }
+.bg-green  { background: #d0ede0;             color: var(--sidebar-bg); }
+.bg-yellow { background: #fef3e2;             color: var(--pending-amber); }
+
+/* --- STATUS TABLE --- */
+.status-table-container {
+  background: var(--card-white);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.status-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+.status-table th {
+  text-align: left;
+  padding: 15px;
+  color: #a4b0be;
+  font-weight: 500;
+  border-bottom: 2px solid var(--accent-light);
+}
+.status-table td {
+  padding: 15px;
+  border-bottom: 1px solid #f1f2f6;
+  color: var(--text-dark);
+  vertical-align: middle;
+}
+.status-table tbody tr:hover {
+  background-color: var(--accent-light);
+}
+
+/* --- STATUS BADGES --- */
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.badge-pending  { background: #fef3e2; color: var(--pending-amber); }
+.badge-approved { background: var(--accent-light); color: var(--success-green); }
+.badge-rejected { background: #fdedec; color: #e74c3c; }

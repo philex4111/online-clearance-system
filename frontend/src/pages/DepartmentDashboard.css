@@ -1,0 +1,185 @@
+/* DepartmentDashboard.css - Taita Taveta University Green Theme */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-color: #f0f4f2;
+  --sidebar-bg: #1a7a4a;        /* TTU Dark Green */
+  --sidebar-hover: #15613b;
+  --accent-green: #27ae60;
+  --accent-light: #e8f5ee;
+  --accent-gold: #f39c12;
+  --card-white: #ffffff;
+  --text-dark: #2c3e50;
+  --success-green: #27ae60;
+  --danger-red: #d63031;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+}
+
+.dept-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* --- SIDEBAR --- */
+.dept-sidebar {
+  width: 260px;
+  background-color: var(--sidebar-bg);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.dept-brand {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  color: #a8d5b5;
+  text-decoration: none;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  border-left: 4px solid var(--accent-gold);
+}
+
+/* --- MAIN CONTENT --- */
+.dept-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background-color: var(--bg-color);
+}
+
+.dept-header {
+  background-color: var(--card-white);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border-bottom: 3px solid var(--accent-light);
+}
+
+.dept-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.dept-content {
+  padding: 30px 40px;
+}
+
+/* --- STAT CARDS --- */
+.dept-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.stat-box {
+  background: var(--card-white);
+  padding: 25px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  border-top: 4px solid var(--accent-green);
+}
+
+.icon-wrapper {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+/* Green variants replace old orange/blue */
+.orange-bg { background: var(--accent-light); color: var(--accent-green); }
+.blue-bg   { background: #d0ede0;             color: var(--sidebar-bg); }
+
+/* --- TABLE --- */
+.request-table-container {
+  background: var(--card-white);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.dept-table { width: 100%; border-collapse: collapse; }
+.dept-table th {
+  text-align: left;
+  padding: 15px;
+  color: #a4b0be;
+  font-weight: 500;
+  border-bottom: 2px solid var(--accent-light);
+}
+.dept-table td {
+  padding: 15px;
+  border-bottom: 1px solid #f1f2f6;
+  color: var(--text-dark);
+  vertical-align: middle;
+}
+.dept-table tbody tr:hover {
+  background-color: var(--accent-light);
+}
+
+/* --- ACTION BUTTONS --- */
+.action-btn {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-right: 10px;
+}
+
+.approve-btn {
+  background-color: var(--accent-light);
+  color: var(--accent-green);
+}
+.approve-btn:hover {
+  background-color: var(--accent-green);
+  color: white;
+}
+
+.reject-btn {
+  background-color: #fadbd8;
+  color: var(--danger-red);
+}
+.reject-btn:hover {
+  background-color: var(--danger-red);
+  color: white;
+}
